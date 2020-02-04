@@ -14,7 +14,7 @@ public class Battleship {
 
 		BattleshipSearch BattleshipSearch;
 		
-		public void setSreach(BattleshipSearch strategy,int [][] g){
+		public void setSearch(BattleshipSearch strategy,int [][] g){
 			BattleshipSearch = strategy;
 			BattleshipSearch.search(g);
 		}
@@ -82,7 +82,13 @@ public class Battleship {
 
 	public static void main(String[] args) {
 		Battleship battle = new Battleship();
+		//HorizontalSweepStrategy HorizontalSweep = new HorizontalSweepStrategy();
+		//RandomSearchStrategy RandomSearch = new RandomSearchStrategy();
+		StrategicSearch StrategicSearch = new StrategicSearch();
 		battle.ShipOnGrid();
+		//battle.setSearch( HorizontalSweep,game1);
+		//battle.setSearch( RandomSearch,game1);
+		battle.setSearch( StrategicSearch,game1);
 		System.out.print(Arrays.deepToString(game1)+'\n');
 		System.out.print(Arrays.deepToString(game2)+'\n');
 		System.out.print(Arrays.deepToString(game3)+'\n');
